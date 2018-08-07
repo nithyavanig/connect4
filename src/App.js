@@ -12,13 +12,13 @@ class App extends Component {
       <div className="container">
       <Container>
         <Row>
-            <Col sm={3}>
+            <Col sm={2}>
                 <Player />
             </Col>
-            <Col sm={6}>
+            <Col sm={8}>
                 <GameBoard />
             </Col>
-            <Col sm={3}>
+            <Col sm={2}>
                 <Scoreboard /> 
             </Col>
         </Row>
