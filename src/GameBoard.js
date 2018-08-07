@@ -17,7 +17,7 @@ class GameBoard extends Component{
         return circleRowCol;
     }
     handleClick(){
-
+        
     }
 
     render(){        

@@ -17,6 +17,9 @@ class App extends Component {
             </Col>
             <Col sm={8}>
                 <GameBoard />
+                <br/>
+                <br/>
+                             
             </Col>
             <Col sm={2}>
                 <Scoreboard /> 
