@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  height:800px;
+  width:800px;
+  border-color: blue;
+  border-width: thin;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+.player_container{
+  float: left;
+  margin-top:50px; 
+  margin-left: 2px;
+}
+.gameboard_container{
+  height: 500px;
+  margin-top:40px;   
+  align-content: center;
+  border:1px solid black;
+}
+.scoreboard_container{   
+  float: right;
+  margin-top:50px;
+  margin-right: 2px;
+}
