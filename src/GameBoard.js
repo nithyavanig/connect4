@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Circle} from 'react-shapes';
+import {ButtonComponent} from './ButtonComponent.js';
 
 class GameBoard extends Component{
     constructor(props){
@@ -10,7 +11,8 @@ class GameBoard extends Component{
         let circleRowCol = [];
         for(let rows=0;rows<7;rows++){
             for(let col=0;col<7;col++){
-                circleRowCol.push(<Circle r={27} fill={{color:'#ffffff'}} />);
+                circleRowCol.push(<button className="circle_button" onClick ={this.handleClick()} />);
+                circleRowCol.push(<span>{' '}</span>);                
             }
             circleRowCol.push(<br/>);            
         }

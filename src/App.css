@@ -28,3 +28,10 @@
   float: right;
   margin-top:50px;  
 }
+.circle_button{
+  height: 50px;
+  width: 50px;
+  background: rgb(244, 246, 247);
+  border-radius: 40px;
+  border: none;
+}
