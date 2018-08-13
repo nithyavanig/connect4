@@ -35,3 +35,10 @@
   border-radius: 40px;
   border: none;
 }
+.start_button{
+  margin-top:60px;
+  height:30px;
+  width:100px;
+  border-radius: 10px;
+  background: rgb(116, 188, 224);
+}

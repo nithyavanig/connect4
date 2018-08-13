@@ -6,20 +6,28 @@ import './App.css';
 import {Container,Row,Col} from 'reactstrap';
 
 class App extends Component {
-  render() {
+  constructor(props){
+    super(props);
+    this.state = {
+      nextPlayer :""
+    };
+  }
+  getNextPlayer = (nextPlayerColor) => {
+      this.setState({nextPlayer:nextPlayerColor});
+  } 
+  render() {      
     return (
       <div className="App">
       <div className="container">
       <Container>
         <Row>
             <Col sm={2}>
-                <Player />
+                <Player nextPlayercallback ={this.getNextPlayer}/>
             </Col>
-            <Col sm={8}>
+            <Col sm={8}>                
                 <GameBoard />
                 <br/>
-                <br/>
-                             
+                <br/>                             
             </Col>
             <Col sm={2}>
                 <Scoreboard /> 

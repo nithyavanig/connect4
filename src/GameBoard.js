@@ -21,14 +21,20 @@ class GameBoard extends Component{
     handleClick(){
         
     }
+    handleStartClick(){
+        let nextPlayerColor = "#ff0000";
+    }
 
     render(){        
         return(
-        <div className ="gameboard_container">            
-            <div className="board_table">
-                {this.renderCircle()}            
+        <div>
+            <button className="start_button" onClick={this.handleStartClick()}>Start</button>
+            <div className ="gameboard_container">            
+                <div className="board_table">
+                    {this.renderCircle()}            
+                </div>
             </div>
-        </div>
+        </div>    
     );
     }
 }
