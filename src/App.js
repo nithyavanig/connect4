@@ -14,8 +14,8 @@ class App extends Component {
   }
   getNextPlayer = (nextPlayerColor) => {
       this.setState({nextPlayer:nextPlayerColor});
-  } 
-  render() {      
+  }  
+  render() {         
     return (
       <div className="App">
       <div className="container">
@@ -24,10 +24,12 @@ class App extends Component {
             <Col sm={2}>
                 <Player nextPlayercallback ={this.getNextPlayer}/>
             </Col>
-            <Col sm={8}>                
-                <GameBoard />
+            <Col sm={8}>
+                <div>                          
+                <GameBoard nextPlayerFromApp ={this.state.nextPlayer}/>
                 <br/>
-                <br/>                             
+                <br/>
+                </div>                             
             </Col>
             <Col sm={2}>
                 <Scoreboard /> 
