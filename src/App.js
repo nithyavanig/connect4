@@ -9,11 +9,15 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      nextPlayer :""
+      isPlayer1:false,
+      isgameplayer1:false      
     };
   }
-  getNextPlayer = (nextPlayerColor) => {
-      this.setState({nextPlayer:nextPlayerColor});
+  setnextplayer = (isplayerOne) => {
+      this.setState({isPlayer1:isplayerOne});
+  }
+  setgameplayed = (isP1) =>{
+    this.setState({isgameplayer1:isP1});
   }  
   render() {         
     return (
@@ -22,11 +26,11 @@ class App extends Component {
       <Container>
         <Row>
             <Col sm={2}>
-                <Player nextPlayercallback ={this.getNextPlayer}/>
+                <Player playerprop = {this.state.isgameplayer1} playercallback ={this.setnextplayer}/>
             </Col>
             <Col sm={8}>
                 <div>                          
-                <GameBoard nextPlayerFromApp ={this.state.nextPlayer}/>
+                <GameBoard gameprop = {this.state.isPlayer1} gamecallback ={this.setgameplayed}/>
                 <br/>
                 <br/>
                 </div>                             

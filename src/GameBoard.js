@@ -2,17 +2,27 @@ import React, { Component } from 'react';
 import './App.css';
 import {Circle} from 'react-shapes';
 import {ButtonComponent} from './ButtonComponent.js';
-
+const player1 = "#ff0000";//Red
+const player2 = "#FFFF00";//Yellow
+const defaultPlayer = "#A9A9A9";
 class GameBoard extends Component{
     constructor(props){
         super(props);
         this.state ={
-            player:""
+            isPlayer1:false,
+            playerColor:defaultPlayer
         };
+        this.handleClick = this.handleClick.bind(this);
     }
     componentWillReceiveProps(){
-        let playerData = this.props.nextPlayerFromApp;
-        this.setState({player:playerData});
+        let isPlay1 = this.props.gameprop;
+        this.setState({isPlayer1:isPlay1});
+        if(isPlay1){
+            this.setState({playerColor:player1});
+        }
+        else{
+            this.setState({playerColor:player2});
+        }
     }
     renderCircle(){
         let circleRowCol = [];
