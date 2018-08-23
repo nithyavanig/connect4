@@ -5,6 +5,7 @@ import {ButtonComponent} from './ButtonComponent.js';
 const player1 = "#ff0000";//Red
 const player2 = "#FFFF00";//Yellow
 const defaultPlayer = "#A9A9A9";
+let boardArray = [];
 class GameBoard extends Component{
     constructor(props){
         super(props);
@@ -14,7 +15,19 @@ class GameBoard extends Component{
         };
         this.handleClick = this.handleClick.bind(this);
     }
-    componentWillReceiveProps(){
+    
+    renderCircle(){
+        let circleRowCol = [];
+        for(let rows=0;rows<7;rows++){
+            for(let col=0;col<7;col++){
+                circleRowCol.push(<button className="circle_button" onClick ={this.handleClick} />);
+                circleRowCol.push(<span>{' '}</span>);                
+            }
+            circleRowCol.push(<br/>);            
+        }
+        return circleRowCol;
+    }
+    handleClick(){
         let isPlay1 = this.props.gameprop;
         this.setState({isPlayer1:isPlay1});
         if(isPlay1){
@@ -23,20 +36,7 @@ class GameBoard extends Component{
         else{
             this.setState({playerColor:player2});
         }
-    }
-    renderCircle(){
-        let circleRowCol = [];
-        for(let rows=0;rows<7;rows++){
-            for(let col=0;col<7;col++){
-                circleRowCol.push(<button className="circle_button" onClick ={this.handleClick()} />);
-                circleRowCol.push(<span>{' '}</span>);                
-            }
-            circleRowCol.push(<br/>);            
-        }
-        return circleRowCol;
-    }
-    handleClick(){
-        
+        this.props.gamecallback(this.state.isPlayer1);
     }
 
     render(){        
